@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正誤クイズ</title>
+    <script>
+
+        //問題を配列にいれる
+        var Q = new Array(
+            "水を電気分解すると水素と酸素が出る。",
+            "地球上で最も多い元素は炭素である。",
+            "金の元素記号はGdである。",
+            "血液は骨の内部で作られる。",
+            "動物細胞に細胞壁はない。"
+        );
+
+        //答え（正誤）を配列にいれる
+        var A = new Array(true,false,false,true,true);
+
+        function Quiz(){
+            var ten =0; //点数をいれる変数
+
+            //5問連続出題
+            for (let i = 0; i < 5; i++) {
+                if(confirm(Q[i]) == A[i])ten +=20;
+            }
+
+            //採点結果発表
+            alert("あなたは"+ten+"点でした！")
+        }
+    </script>
+</head>
+<body>
+    <h1>問題</h1>
+    <p>正誤に答えてください。<br>正しければ「OK」を、間違っていれば「キャンセル」をクリックしてください。</p>
+    <input type="button" value="クイズスタート" onclick="Quiz()">
+</body>
+</html>
